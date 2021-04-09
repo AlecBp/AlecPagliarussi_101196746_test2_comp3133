@@ -1,3 +1,238 @@
-<p>mission works!</p>
+<h1 class="header">Mission details</h1>
+<img class="patch-img" src="{{ mission.links.mission_patch_small }}" />
+<div class="container">
+  <ul class="mission-details">
+    <li>
+      <span>Mission ID:</span> {{ mission.mission_id[0] || " Not available" }}
+    </li>
+    <li>
+      <span>Flight Number:</span>
+      {{ mission.flight_number || " Not available" }}
+    </li>
+    <li>
+      <span>Mission Name:</span> {{ mission.mission_name || " Not available" }}
+    </li>
+    <li><span>Details:</span> {{ mission.details || " Not available" }}</li>
+    <li>
+      <span>Rocket:</span>
+      <ul>
+        <li>ID: {{ mission.rocket.rocket_id }}</li>
+        <li>Name: {{ mission.rocket.rocket_name }}</li>
+        <li>Type: {{ mission.rocket.rocket_type }}</li>
+        <li>
+          Fairings:
+          <ul>
+            <li>Recoverd: {{ mission.rocket.fairings.recovered }}</li>
+            <li>Recovery attempt: {{ mission.rocket.recovery_attempt }}</li>
+            <li>Reused: {{ mission.rocket.reused }}</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><span>Crew:</span> {{ mission.crew || " Not available" }}</li>
 
-{{debug()}}
+    <li>
+      <span>Is tentative:</span> {{ mission.is_tentative || " Not available" }}
+    </li>
+    <li>
+      <span>Launch date local:</span>
+      {{ mission.launch_date_local || " Not available" }}
+    </li>
+    <li>
+      <span>Launch date UNIX:</span>
+      {{ mission.launch_date_unix || " Not available" }}
+    </li>
+    <li>
+      <span>Launch date UTC:</span>
+      {{ mission.launch_date_utc || " Not available" }}
+    </li>
+    <li>
+      <span>Launch site:</span>
+      <ul>
+        <li>Site ID: {{ mission.launch_site.site_id }}</li>
+        <li>Site Name: {{ mission.launch_site.site_name }}</li>
+        <li>Site Name Long: {{ mission.launch_site.site_name_long }}</li>
+      </ul>
+    </li>
+    <li>
+      <span>Launch success:</span>
+      {{ mission.launch_success || " Not available" }}
+    </li>
+    <li>
+      <span>Launch window:</span>
+      {{ mission.launch_window || " Not available" }}
+    </li>
+    <li>
+      <span>Launch year:</span> {{ mission.launch_year || " Not available" }}
+    </li>
+    <li>
+      <span>Static fire date UNIX:</span>
+      {{ mission.static_fire_date_unix || " Not available" }}
+    </li>
+    <li>
+      <span>Static fire date UTC:</span>
+      {{ mission.static_fire_date_utc || " Not available" }}
+    </li>
+    <li><span>TBD:</span> {{ mission.tbd || " Not available" }}</li>
+    <li>
+      <span>Tentative max precision:</span>
+      {{ mission.tentative_max_precision || " Not available" }}
+    </li>
+    <li><span>Upcoming:</span> {{ mission.upcoming || " Not available" }}</li>
+    <li>
+      <span>Links:</span>
+      <ul>
+        <li>
+          Article:
+          <a
+            href="{{
+              mission.links.article_link ? mission.links.article_link : '#'
+            }}"
+            >{{
+              mission.links.article_link
+                ? "Link available"
+                : "Link not available"
+            }}</a
+          >
+        </li>
+        <li>
+          Flickr:
+          <a
+            href="{{
+              mission.links.flickr_images ? mission.links.flickr_images : '#'
+            }}"
+            >{{
+              mission.links.flickr_images
+                ? "Link available"
+                : "Link not available"
+            }}</a
+          >
+        </li>
+        <li>
+          Mission patch:
+          <a
+            href="{{
+              mission.links.mission_patch ? mission.links.mission_patch : '#'
+            }}"
+            >{{
+              mission.links.mission_patch
+                ? "Link available"
+                : "Link not available"
+            }}</a
+          >
+        </li>
+        <li>
+          Mission patch small:
+          <a
+            href="{{
+              mission.links.mission_patch_small
+                ? mission.links.mission_patch_small
+                : '#'
+            }}"
+            >{{
+              mission.links.mission_patch_small
+                ? "Link available"
+                : "Link not available"
+            }}</a
+          >
+        </li>
+        <li>
+          Presskit:
+          <a
+            href="{{ mission.links.presskit ? mission.links.presskit : '#' }}"
+            >{{
+              mission.links.presskit ? "Link available" : "Link not available"
+            }}</a
+          >
+        </li>
+        <li>
+          Reddit campaign:
+          <a
+            href="{{
+              mission.links.reddit_campaign
+                ? mission.links.reddit_campaign
+                : '#'
+            }}"
+            >{{
+              mission.links.reddit_campaign
+                ? "Link available"
+                : "Link not available"
+            }}</a
+          >
+        </li>
+        <li>
+          Reddit launch:
+          <a
+            href="{{
+              mission.links.reddit_launch ? mission.links.reddit_launch : '#'
+            }}"
+            >{{
+              mission.links.reddit_launch
+                ? "Link available"
+                : "Link not available"
+            }}</a
+          >
+        </li>
+        <li>
+          Reddit media:
+          <a
+            href="{{
+              mission.links.reddit_media ? mission.links.reddit_media : '#'
+            }}"
+            >{{
+              mission.links.reddit_media
+                ? "Link available"
+                : "Link not available"
+            }}</a
+          >
+        </li>
+        <li>
+          Reddit recovery:
+          <a
+            href="{{
+              mission.links.reddit_recovery
+                ? mission.links.reddit_recovery
+                : '#'
+            }}"
+            >{{
+              mission.links.reddit_recovery
+                ? "Link available"
+                : "Link not available"
+            }}</a
+          >
+        </li>
+        <li>
+          Video link:
+          <a
+            href="{{
+              mission.links.video_link ? mission.links.video_link : '#'
+            }}"
+            >{{
+              mission.links.video_link ? "Link available" : "Link not available"
+            }}</a
+          >
+        </li>
+        <li>
+          Wikipedia:
+          <a
+            href="{{ mission.links.wikipedia ? mission.links.wikipedia : '#' }}"
+            >{{
+              mission.links.wikipedia ? "Link available" : "Link not available"
+            }}</a
+          >
+        </li>
+        <li>
+          Youtube:
+          <a
+            href="{{
+              mission.links.youtube_id ? mission.links.youtube_id : '#'
+            }}"
+            >{{
+              mission.links.youtube_id ? "Link available" : "Link not available"
+            }}</a
+          >
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

@@ -21,6 +21,8 @@ export class MissionComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.getById(this.flightNumber).subscribe((data: any) => {
+      console.log(data);
+      
       this.mission = data;
     });
   }
