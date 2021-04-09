@@ -19,20 +19,7 @@
         <li>ID: {{ mission.rocket.rocket_id }}</li>
         <li>Name: {{ mission.rocket.rocket_name }}</li>
         <li>Type: {{ mission.rocket.rocket_type }}</li>
-        <li>
-          Fairings:
-          <ul>
-            <li>Recoverd: {{ mission.rocket.fairings.recovered }}</li>
-            <li>Recovery attempt: {{ mission.rocket.recovery_attempt }}</li>
-            <li>Reused: {{ mission.rocket.reused }}</li>
-          </ul>
-        </li>
       </ul>
-    </li>
-    <li><span>Crew:</span> {{ mission.crew || " Not available" }}</li>
-
-    <li>
-      <span>Is tentative:</span> {{ mission.is_tentative || " Not available" }}
     </li>
     <li>
       <span>Launch date local:</span>
@@ -78,7 +65,6 @@
       <span>Tentative max precision:</span>
       {{ mission.tentative_max_precision || " Not available" }}
     </li>
-    <li><span>Upcoming:</span> {{ mission.upcoming || " Not available" }}</li>
     <li>
       <span>Links:</span>
       <ul>
